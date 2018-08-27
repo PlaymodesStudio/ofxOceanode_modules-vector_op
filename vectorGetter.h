@@ -15,8 +15,10 @@ class vectorGetter : public ofxOceanodeNodeModel{
 public:
     vectorGetter() : ofxOceanodeNodeModel("Vector Getter"){
         parameters->add(input.set("Input", {0}, {0}, {1}));
-        parameters->add(index.set("Index", "0"));
+        parameters->add(index.set("Index", 0, 0, 1));
         parameters->add(output.set("Output", 0));
+        
+        lastSize = 1;
                 
         listener = input.newListener(this, &vectorGetter::inputListener);
     };
@@ -25,16 +27,24 @@ public:
     
 private:
     void inputListener(vector<float> &v){
-        if(input.get().size() > ofToInt(index)){
-            output = input.get()[ofToInt(index)];
+        if(v.size() != lastSize){
+            if(index >= v.size()) index = v.size()-1;
+            index.setMax(v.size() - 1);
+            string indexName = "Index";
+            parameterChangedMinMax.notify(this, indexName);
+            lastSize = v.size();
+        }
+        if(v.size() > index){
+            output = v[index];
         }
     }
     
     ofEventListener listener;
     
     ofParameter<vector<float>>  input;
-    ofParameter<string> index;
+    ofParameter<int> index;
     ofParameter<float>  output;
+    int lastSize;
 };
 
 #endif /* vectorGetter_h */
