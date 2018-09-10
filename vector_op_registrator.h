@@ -12,6 +12,7 @@
 #include "vectorChain.h"
 #include "vectorGetter.h"
 #include "vectorOperations.h"
+#include "vectorItemOperations.h"
 #include "ofxOceanodeNodeRegistry.h"
 
 static void registerVectorOp(shared_ptr<ofxOceanodeNodeRegistry> registry){
@@ -19,6 +20,7 @@ static void registerVectorOp(shared_ptr<ofxOceanodeNodeRegistry> registry){
     registry->registerModel<vectorChain>("Vector Operations");
     registry->registerModel<vectorGetter>("Vector Operations");
     registry->registerModel<vectorOperations>("Vector Operations");
+    registry->registerModel<vectorItemOperations>("Vector Operations");
 }
 
 #endif /* vector_op_registrator_h */
