@@ -21,16 +21,14 @@ void subDimensionCombinator::paramListener(vector<float> &vf){
     int originSize = original.get().size();
     int subDimSize = subDimension.get().size();
     if(originSize == 0 || subDimSize == 0) return;
-    if(originSize < subDimSize){
-        if(subDimSize % originSize == 0){
-            vector<float> tempOut(subDimSize, 0);
-            int dimStep = subDimSize / originSize;
-            for(int i = 0 ; i < subDimSize; i++){
-                int dimStep_ind = ceil(i / dimStep);
-                tempOut[i] = original.get()[dimStep_ind] * subDimension.get()[i];
-            }
-            output = tempOut;
+    if(subDimSize % originSize == 0){
+        vector<float> tempOut(subDimSize, 0);
+        int dimStep = subDimSize / originSize;
+        for(int i = 0 ; i < subDimSize; i++){
+            int dimStep_ind = ceil(i / dimStep);
+            tempOut[i] = original.get()[dimStep_ind] * subDimension.get()[i];
         }
+        output = tempOut;
     }
     else{
         int size = subDimSize * originSize;
