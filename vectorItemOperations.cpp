@@ -7,7 +7,7 @@
 
 #include "vectorItemOperations.h"
 
-vectorItemOperations::vectorItemOperations() : ofxOceanodeNodeModel("Vector Item Operationsa"){
+vectorItemOperations::vectorItemOperations() : ofxOceanodeNodeModel("Vector Item Operations"){
     parameters->add(triggerIndex.set("Trigger Index", 0, 0, 1));
     parameters->add(in1.set("Input 1", {0}, {0}, {1}));
     parameters->add(in2.set("Input 2", {0}, {0}, {1}));

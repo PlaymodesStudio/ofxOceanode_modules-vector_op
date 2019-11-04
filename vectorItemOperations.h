@@ -6,7 +6,7 @@
 //
 
 #ifndef vectorItemOperations_h
-#define vectorItemOperations_
+#define vectorItemOperations_h
 
 #include "ofxOceanodeNodeModel.h"
 
