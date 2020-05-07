@@ -8,11 +8,11 @@
 #include "vectorItemOperations.h"
 
 vectorItemOperations::vectorItemOperations() : ofxOceanodeNodeModel("Vector Item Operations"){
-    parameters->add(triggerIndex.set("Trigger Index", 0, 0, 1));
-    parameters->add(in1.set("Input 1", {0}, {0}, {1}));
-    parameters->add(in2.set("Input 2", {0}, {0}, {1}));
-    parameters->add(createDropdownAbstractParameter("Operation", {"Bypass", "Sum", "Multiply", "Mean", "Diff", "Max", "Min"}, operation));
-    parameters->add(output.set("Output", {0}, {0}, {1}));
+    addParameter(triggerIndex.set("Trigger Index", 0, 0, 1));
+    addParameter(in1.set("Input 1", {0}, {0}, {1}));
+    addParameter(in2.set("Input 2", {0}, {0}, {1}));
+    addParameterDropdown(operation, "Operation", 0, {"Bypass", "Sum", "Multiply", "Mean", "Diff", "Max", "Min"});
+    addParameter(output.set("Output", {0}, {0}, {1}));
     
 
     

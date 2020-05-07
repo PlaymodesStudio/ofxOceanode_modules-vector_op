@@ -9,10 +9,10 @@
 #include "subDimensionCombinator.h"
 
 subDimensionCombinator::subDimensionCombinator() : ofxOceanodeNodeModel("SubDimension Combinator"){
-    parameters->add(original.set("Original", {0}, {0}, {1}));
-    parameters->add(subDimension.set("Sub Dimension", {0}, {0}, {1}));
+    addParameter(original.set("Original", {0}, {0}, {1}));
+    addParameter(subDimension.set("Sub Dimension", {0}, {0}, {1}));
     
-    parameters->add(output.set("Output", {0}, {0}, {1}));
+    addParameter(output.set("Output", {0}, {0}, {1}));
     
     listener = original.newListener(this, &subDimensionCombinator::paramListener);
 }

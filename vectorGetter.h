@@ -14,9 +14,9 @@
 class vectorGetter : public ofxOceanodeNodeModel{
 public:
     vectorGetter() : ofxOceanodeNodeModel("Vector Getter"){
-        parameters->add(input.set("Input", {0, 0}, {0}, {1}));
-        parameters->add(index.set("Index", 0, 0, 1));
-        parameters->add(output.set("Output", 0));
+        addParameter(input.set("Input", {0, 0}, {0}, {1}));
+        addParameter(index.set("Index", 0, 0, 1));
+        addParameter(output.set("Output", 0));
         
         lastSize = 1;
         wishIndex = -1;

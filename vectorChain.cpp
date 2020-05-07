@@ -11,10 +11,10 @@
 vectorChain::vectorChain() : ofxOceanodeNodeModel("Vector Chain"){
     inputs.resize(2);
     for(int i = 0; i < inputs.size() ; i++){
-        parameters->add(inputs[i].set("Input " + ofToString(i), {0}, {0}, {1}));
+        addParameter(inputs[i].set("Input " + ofToString(i), {0}, {0}, {1}));
     }
-    parameters->add(offset.set("Offset", 0, -1, 1));
-    parameters->add(output.set("Output", {0}, {0}, {1}));
+    addParameter(offset.set("Offset", 0, -1, 1));
+    addParameter(output.set("Output", {0}, {0}, {1}));
     
     
     listener = inputs[0].newListener(this, &vectorChain::inputListener);

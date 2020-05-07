@@ -23,9 +23,9 @@ enum operations{
 class vectorOperations : public ofxOceanodeNodeModel{
 public:
     vectorOperations() : ofxOceanodeNodeModel("Vector Operations"){
-        parameters->add(input.set("Input", {0}, {0}, {1}));
-        parameters->add(createDropdownAbstractParameter("Operation", {"Min", "Max", "Sum", "Mean", "Diff", "Dev"}, operationSelector));
-        parameters->add(output.set("Output", 0, 0, 1));
+        addParameter(input.set("Input", {0}, {0}, {1}));
+        addParameterDropdown(operationSelector, "Operation", 0, {"Min", "Max", "Sum", "Mean", "Diff", "Dev"});
+        addParameter(output.set("Output", 0, 0, 1));
 
         listener = input.newListener(this, &vectorOperations::inputListener);
     }
