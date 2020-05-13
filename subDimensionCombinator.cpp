@@ -10,7 +10,7 @@
 
 subDimensionCombinator::subDimensionCombinator() : ofxOceanodeNodeModel("SubDimension Combinator"){
     addParameter(original.set("Original", {0}, {0}, {1}));
-    addParameter(subDimension.set("Sub Dimension", {0}, {0}, {1}));
+    addParameter(subDimension.set("Sub.Dim", {0}, {0}, {1}));
     
     addParameter(output.set("Output", {0}, {0}, {1}));
     
