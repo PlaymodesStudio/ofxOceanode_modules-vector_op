@@ -13,14 +13,14 @@
 #include "vectorGetter.h"
 #include "vectorOperations.h"
 #include "vectorItemOperations.h"
-#include "ofxOceanodeNodeRegistry.h"
+#include "ofxOceanode.h"
 
-static void registerVectorOp(shared_ptr<ofxOceanodeNodeRegistry> registry){
-    registry->registerModel<subDimensionCombinator>("Vector Operations");
-    registry->registerModel<vectorChain>("Vector Operations");
-    registry->registerModel<vectorGetter>("Vector Operations");
-    registry->registerModel<vectorOperations>("Vector Operations");
-    registry->registerModel<vectorItemOperations>("Vector Operations");
+static void registerVectorOp(ofxOceanode &o){
+    o.registerModel<subDimensionCombinator>("Vector Operations");
+    o.registerModel<vectorChain>("Vector Operations");
+    o.registerModel<vectorGetter>("Vector Operations");
+    o.registerModel<vectorOperations>("Vector Operations");
+    o.registerModel<vectorItemOperations>("Vector Operations");
 }
 
 #endif /* vector_op_registrator_h */
